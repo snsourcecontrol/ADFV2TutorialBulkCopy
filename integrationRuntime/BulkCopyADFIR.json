@@ -1,0 +1,12 @@
+{
+	"name": "BulkCopyADFIR",
+	"properties": {
+		"type": "SelfHosted",
+		"typeProperties": {
+			"linkedInfo": {
+				"resourceId": "/subscriptions/1bde1a91-7d4a-4265-9573-8901e65a82ac/resourcegroups/adf/providers/Microsoft.DataFactory/factories/adfv2datalake/integrationruntimes/LocalIntegrationServicesRuntime",
+				"authorizationType": "Rbac"
+			}
+		}
+	}
+}
