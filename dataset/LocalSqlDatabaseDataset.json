@@ -1,0 +1,13 @@
+{
+	"name": "LocalSqlDatabaseDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LocalSqlDatabaseLinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"type": "SqlServerTable",
+		"typeProperties": {
+			"tableName": "[HR].[Employees]"
+		}
+	}
+}
