@@ -1,6 +1,13 @@
 {
 	"name": "AzureSqlDatabaseDataset",
 	"properties": {
-		"type": "AzureSqlTable"
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureSqlTable",
+		"typeProperties": {
+			"tableName": "[HR].[Employees]"
+		}
 	}
 }
