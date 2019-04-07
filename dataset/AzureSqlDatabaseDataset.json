@@ -1,0 +1,6 @@
+{
+	"name": "AzureSqlDatabaseDataset",
+	"properties": {
+		"type": "AzureSqlTable"
+	}
+}
