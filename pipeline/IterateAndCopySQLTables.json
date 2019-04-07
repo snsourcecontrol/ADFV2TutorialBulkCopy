@@ -24,10 +24,7 @@
 							"typeProperties": {
 								"source": {
 									"type": "SqlSource",
-									"sqlReaderQuery": {
-										"value": "SELECT * FROM [@{item().TABLE_SCHEMA}].[@{item().TABLE_NAME}]",
-										"type": "Expression"
-									}
+									"sqlReaderQuery": "SELECT * FROM [@{item().TABLE_SCHEMA}].[@{item().TABLE_NAME}]"
 								},
 								"sink": {
 									"type": "SqlSink",
@@ -49,7 +46,13 @@
 							"inputs": [
 								{
 									"referenceName": "LocalSqlDatabaseDataset",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"DBTableName": {
+											"value": "@pipeline().parameters.tableList",
+											"type": "Expression"
+										}
+									}
 								}
 							],
 							"outputs": [
