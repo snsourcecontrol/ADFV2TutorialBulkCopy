@@ -1,0 +1,16 @@
+{
+	"name": "LocalSqlDatabaseLinkedService",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=True;data source=DOLSPD126169;initial catalog=TSQLV4",
+			"userName": "dol\\snellore",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIxMTY0YzBlMi1iZTUwLTQzMmEtOWJjNy1iOWI2MzA0YmI2NzMiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "BulkCopyADFIR",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
