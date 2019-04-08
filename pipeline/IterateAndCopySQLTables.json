@@ -46,25 +46,13 @@
 							"inputs": [
 								{
 									"referenceName": "LocalSqlDatabaseDataset",
-									"type": "DatasetReference",
-									"parameters": {
-										"DBTableName": {
-											"value": "@pipeline().parameters.tableList",
-											"type": "Expression"
-										}
-									}
+									"type": "DatasetReference"
 								}
 							],
 							"outputs": [
 								{
 									"referenceName": "LocalSqlDatabaseDataset",
-									"type": "DatasetReference",
-									"parameters": {
-										"DBTableName": {
-											"value": "[@{item().TABLE_SCHEMA}].[@{item().TABLE_NAME}]",
-											"type": "Expression"
-										}
-									}
+									"type": "DatasetReference"
 								}
 							]
 						}

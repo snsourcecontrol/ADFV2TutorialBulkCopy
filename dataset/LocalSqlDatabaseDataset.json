@@ -5,17 +5,9 @@
 			"referenceName": "LocalSqlDatabaseLinkedService",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"DBTableName": {
-				"type": "String"
-			}
-		},
 		"type": "SqlServerTable",
 		"typeProperties": {
-			"tableName": {
-				"value": "@dataset().DBTableName",
-				"type": "Expression"
-			}
+			"tableName": "[HR].[Employees]"
 		}
 	}
 }
