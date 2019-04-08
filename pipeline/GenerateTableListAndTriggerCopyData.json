@@ -42,7 +42,7 @@
 					},
 					"parameters": {
 						"TableList": {
-							"value": "@activity('LookupTableList').output.value",
+							"value": "@activity('LookupTableList').output",
 							"type": "Expression"
 						}
 					}
