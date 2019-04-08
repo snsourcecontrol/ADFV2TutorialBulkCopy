@@ -1,0 +1,84 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory Name",
+			"defaultValue": "ADFTutorialBulkCopyDFSn"
+		},
+		"AzureSqlDatabase_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase'"
+		},
+		"LocalSqlDatabaseLinkedService_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LocalSqlDatabaseLinkedService'"
+		},
+		"LocalSqlDatabaseLinkedService_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LocalSqlDatabaseLinkedService'"
+		},
+		"Staging_AzureStorageLinkedService_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Staging_AzureStorageLinkedService'"
+		},
+		"LocalSqlDatabaseLinkedService_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "dol\\snellore"
+		},
+		"BulkCopyADFIR_properties_typeProperties_linkedInfo_resourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/1bde1a91-7d4a-4265-9573-8901e65a82ac/resourcegroups/adf/providers/Microsoft.DataFactory/factories/adfv2datalake/integrationruntimes/LocalIntegrationServicesRuntime"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas Token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureSqlDatabase_connectionString": {
+						"value": "[parameters('AzureSqlDatabase_connectionString')]"
+					},
+					"Staging_AzureStorageLinkedService_connectionString": {
+						"value": "[parameters('Staging_AzureStorageLinkedService_connectionString')]"
+					},
+					"LocalSqlDatabaseLinkedService_connectionString": {
+						"value": "[parameters('LocalSqlDatabaseLinkedService_connectionString')]"
+					},
+					"LocalSqlDatabaseLinkedService_password": {
+						"value": "[parameters('LocalSqlDatabaseLinkedService_password')]"
+					},
+					"BulkCopyADFIR_properties_typeProperties_linkedInfo_resourceId": {
+						"value": "[parameters('BulkCopyADFIR_properties_typeProperties_linkedInfo_resourceId')]"
+					},
+					"LocalSqlDatabaseLinkedService_properties_typeProperties_userName": {
+						"value": "[parameters('LocalSqlDatabaseLinkedService_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

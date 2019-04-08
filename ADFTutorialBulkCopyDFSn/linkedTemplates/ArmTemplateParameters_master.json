@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ADFTutorialBulkCopyDFSn"
+		},
+		"AzureSqlDatabase_connectionString": {
+			"value": ""
+		},
+		"LocalSqlDatabaseLinkedService_connectionString": {
+			"value": ""
+		},
+		"LocalSqlDatabaseLinkedService_password": {
+			"value": ""
+		},
+		"Staging_AzureStorageLinkedService_connectionString": {
+			"value": ""
+		},
+		"LocalSqlDatabaseLinkedService_properties_typeProperties_userName": {
+			"value": "dol\\snellore"
+		},
+		"BulkCopyADFIR_properties_typeProperties_linkedInfo_resourceId": {
+			"value": "/subscriptions/1bde1a91-7d4a-4265-9573-8901e65a82ac/resourcegroups/adf/providers/Microsoft.DataFactory/factories/adfv2datalake/integrationruntimes/LocalIntegrationServicesRuntime"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
