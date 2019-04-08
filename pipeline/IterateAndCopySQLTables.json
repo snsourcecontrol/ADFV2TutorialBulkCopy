@@ -40,7 +40,7 @@
 										"referenceName": "Staging_AzureStorageLinkedService",
 										"type": "LinkedServiceReference"
 									},
-									"path": "adfv1blob"
+									"path": ""
 								}
 							},
 							"inputs": [
@@ -51,8 +51,14 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "LocalSqlDatabaseDataset",
-									"type": "DatasetReference"
+									"referenceName": "AzureSqlDatabaseDataset",
+									"type": "DatasetReference",
+									"parameters": {
+										"DBTableName": {
+											"value": "[@{item().TABLE_SCHEMA}].[@{item().TABLE_NAME}]",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
