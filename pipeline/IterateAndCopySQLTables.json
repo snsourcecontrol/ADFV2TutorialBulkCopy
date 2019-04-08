@@ -7,7 +7,7 @@
 				"type": "ForEach",
 				"typeProperties": {
 					"items": {
-						"value": "@pipeline().parameters.tableList",
+						"value": "@pipeline().parameters.TableList",
 						"type": "Expression"
 					},
 					"activities": [
