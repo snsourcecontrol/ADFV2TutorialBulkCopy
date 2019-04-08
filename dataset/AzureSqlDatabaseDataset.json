@@ -5,9 +5,17 @@
 			"referenceName": "AzureSqlDatabase",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"DBTableName": {
+				"type": "String"
+			}
+		},
 		"type": "AzureSqlTable",
 		"typeProperties": {
-			"tableName": "[HR].[Employees]"
+			"tableName": {
+				"value": "@dataset().DBTableName",
+				"type": "Expression"
+			}
 		}
 	}
 }
